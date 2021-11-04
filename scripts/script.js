@@ -1,66 +1,68 @@
-const nome = document.getElementById("nome")
-const email = document.getElementById("email")
-const senha = document.getElementById("senha")
-const confirmaSenha = document.getElementById("confirmaSenha")
-const btn = document.getElementById("b1")
+const nome = document.getElementById("nome");
+const email = document.getElementById("email");
+const senha = document.getElementById("senha");
+const confirmaSenha = document.getElementById("confirmaSenha");
+const btn = document.getElementById("b1");
 
-let n = undefined;
-let em = undefined;
-let p = undefined;
-let vp = undefined;
+let nomeValido = undefined;
+let emailValido = undefined;
+let senhaValido = undefined;
+let csenhaValido = undefined;
+
 
 btn.addEventListener("click", event => {
     checkdata()
 
     //  !== Estritamente não igual
-    if (n !== true || em !== true || p !== true || vp !== true) {
+    if (nomeValido !== true || emailValido !== true || senhaValido !== true || csenhaValido !== true) {
         event.preventDefault(); //parar a propagação do evento através do DOM.
         console.log('dados não conferem')
     }
 });
 
-function checkdata() {
-    const nval = nome.value.trim();
-    const eval = email.value.trim();
-    const pval = senha.value.trim();
-    const vpval = confirmaSenha.value.trim();
 
-    if (nval === "") {
+function checkdata() {
+    const valorNome = nome.value.trim();
+    const valorEmail = email.value.trim();
+    const valorSenha = senha.value.trim();
+    const valorConfirmaSenha = confirmaSenha.value.trim();
+
+    if (valorNome === "") {
         seterror(nome, "Informe o Nome*")
-        n = false;
+        nomeValido = false;
     } else {
         setnoerror(nome)
-        n = true;
+        nomeValido = true;
     }
 
-    if (eval === "") {
+    if (valorEmail === "") {
         seterror(email, "Informe o Email*")
-        em = false;
-    } else if (!remail(eval)) {
+        emailValido = false;
+    } else if (!remail(valorEmail)) {
         seterror(email, "Informe um Email válido")
-        em = false;
+        emailValido = false;
     } else {
         setnoerror(email)
-        em = true;
+        emailValido = true;
     }
 
-    if (pval === "") {
+    if (valorSenha === "") {
         seterror(senha, "Informe a Senha*")
-        p = false;
+        senhaValido = false;
     } else {
         setnoerror(senha)
-        p = true;
+        senhaValido = true;
     }
 
-    if (vpval === "") {
+    if (valorConfirmaSenha === "") {
         seterror(confirmaSenha, "Informe a Senha*")
-        vp = false;
+        csenhaValido = false;
     } else if (pval !== vpval) {
         seterror(vpass, "Senhas não conferem")
-        vp = false;
+        csenhaValido = false;
     } else {
         setnoerror(vpass)
-        vp = true;
+        csenhaValido = true;
     }
 }
 
@@ -76,6 +78,6 @@ function setnoerror(input) {
     formparts.className = 'form-parts noerror';
 }
 
-function remail(eval) {
-    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(eval)
+function remail(valorEmail) {
+    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(valorEmail)
 }
