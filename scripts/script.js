@@ -10,7 +10,7 @@ let senhaValido = undefined;
 let csenhaValido = undefined;
 
 
-btn.addEventListener("click", event => {
+btnEnviar.addEventListener("click", event => {
     checkdata()
 
     //  !== Estritamente não igual
@@ -57,11 +57,11 @@ function checkdata() {
     if (valorConfirmaSenha === "") {
         seterror(confirmaSenha, "Informe a Senha*")
         csenhaValido = false;
-    } else if (pval !== vpval) {
-        seterror(vpass, "Senhas não conferem")
+    } else if (valorSenha !== valorConfirmaSenha) {
+        seterror(confirmaSenha, "Senhas não conferem")
         csenhaValido = false;
     } else {
-        setnoerror(vpass)
+        setnoerror(confirmaSenha)
         csenhaValido = true;
     }
 }
