@@ -145,7 +145,7 @@ label {
     font-size: 12px;
 }
 
-#b1 {
+#btnEnviar {
     width: 176px;
     height: 29px;
     margin: 28px 0px 0px 0px;
@@ -155,8 +155,8 @@ label {
     font-size: 19px;
 }
 
-#b1:hover {
-    background-color: rgb(248, 239, 227);
+#btnEnviar:hover {
+    background-color: rgb(105, 245, 12);
 }
 
 .form-parts {

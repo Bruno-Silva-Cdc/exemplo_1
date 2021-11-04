@@ -2,7 +2,7 @@ const nome = document.getElementById("nome");
 const email = document.getElementById("email");
 const senha = document.getElementById("senha");
 const confirmaSenha = document.getElementById("confirmaSenha");
-const btn = document.getElementById("b1");
+const btn = document.getElementById("btnEnviar");
 
 let nomeValido = undefined;
 let emailValido = undefined;
