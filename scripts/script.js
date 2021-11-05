@@ -14,7 +14,8 @@ btnEnviar.addEventListener("click", event => {
     checkdata()
 
     //  !== Estritamente não igual
-    if (nomeValido !== true || emailValido !== true || senhaValido !== true || csenhaValido !== true) {
+    if (nomeValido !== true ||
+        emailValido !== true || senhaValido !== true || csenhaValido !== true) {
         event.preventDefault(); //parar a propagação do evento através do DOM.
         console.log('dados não conferem')
     }
