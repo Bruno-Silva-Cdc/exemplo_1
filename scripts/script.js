@@ -2,7 +2,7 @@ const nome = document.getElementById("nome");
 const email = document.getElementById("email");
 const senha = document.getElementById("senha");
 const confirmaSenha = document.getElementById("confirmaSenha");
-const btn = document.getElementById("btnEnviar");
+const btnEnviar = document.getElementById("btnEnviar");
 
 let nomeValido = undefined;
 let emailValido = undefined;
@@ -14,7 +14,8 @@ btnEnviar.addEventListener("click", event => {
     checkdata()
 
     //  !== Estritamente não igual
-    if (nomeValido !== true || emailValido !== true || senhaValido !== true || csenhaValido !== true) {
+    if (nomeValido !== true ||
+        emailValido !== true || senhaValido !== true || csenhaValido !== true) {
         event.preventDefault(); //parar a propagação do evento através do DOM.
         console.log('dados não conferem')
     }
